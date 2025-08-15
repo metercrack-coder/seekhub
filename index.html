@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Roblox Script Hub</title>
+<style>
+  :root{
+    --accent:#3b82f6;         /* primary blue */
+    --accent-2:#60a5fa;       /* lighter blue */
+    --panel:rgba(7, 13, 26, .88);
+    --text:#e6f1ff;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html,body{ height:100%; }
+  body{
+    margin:0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color:var(--text);
+    background:#0b1220 url("your-background.jpg") center / cover fixed no-repeat;
+  }
+
+  .overlay{
+    min-height:100%;
+    background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.75));
+  }
+
+  .container{
+    max-width:960px;
+    margin:0 auto;
+    padding:28px 20px 48px;
+  }
+
+  /* Centered Fancy Thick Neon Heading with Border */
+  .heading {
+    display: block; /* full width */
+    width: 100%; /* fill container */
+    text-align: center; /* center text */
+    font-size: 64px;
+    font-weight: 900;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 12px rgba(59, 130, 246, 0.6),
+                 0 0 24px rgba(96, 165, 250, 0.4),
+                 0 0 36px rgba(59, 130, 246, 0.3);
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    padding: 16px 0; /* vertical padding */
+    border: 1px solid rgba(59,130,246,.35);
+    border-radius: 12px;
+    animation: glow 2.5s ease-in-out infinite alternate;
+    box-sizing: border-box;
+  }
+
+  @keyframes glow {
+    0% { text-shadow: 0 0 8px rgba(59, 130, 246, 0.5),
+                         0 0 16px rgba(96, 165, 250, 0.3),
+                         0 0 24px rgba(59, 130, 246, 0.2); }
+    100% { text-shadow: 0 0 16px rgba(59, 130, 246, 0.8),
+                          0 0 32px rgba(96, 165, 250, 0.5),
+                          0 0 48px rgba(59, 130, 246, 0.4); }
+  }
+
+  .card{
+    background:var(--panel);
+    border:1px solid rgba(59, 130, 246, .35);
+    border-radius:14px;
+    box-shadow:0 12px 28px rgba(0,0,0,.45);
+    overflow:hidden;
+  }
+
+  .section{ margin-bottom:28px; }
+
+  /* Banners: force equal size + clean edges */
+  .banner{ margin-bottom:14px; }
+  .banner img{
+    width:100%;
+    display:block;
+    aspect-ratio:16 / 9;
+    object-fit:cover;
+  }
+
+  /* Script card */
+  .script-box{ padding:16px; }
+  .script-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    margin-bottom:10px;
+  }
+  .script-title{
+    margin:0;
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:.2px;
+  }
+  .copy-btn{
+    border:0;
+    background:var(--accent);
+    color:#fff;
+    padding:9px 16px;
+    border-radius:10px;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:0 8px 18px rgba(59,130,246,.35);
+    transition:transform .12s ease, filter .12s ease;
+  }
+  .copy-btn:hover{ filter:brightness(.96); transform:translateY(-1px); }
+  .copy-btn:active{ transform:translateY(0); }
+
+  .code{
+    width:100%;
+    height:110px;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid rgba(59,130,246,.35);
+    background:#070d1a;
+    color:#a5d8ff;
+    font:14px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    resize:none;
+  }
+
+  /* Continuous Marquee */
+  .marquee-container {
+    overflow: hidden;
+    background: rgba(7, 13, 26, .9);
+    border: 1px solid rgba(59,130,246,.35);
+    border-radius: 12px;
+    margin: 0 0 20px 0;
+    padding: 10px 0;
+  }
+
+  .marquee {
+    display: flex;
+    width: max-content;
+    animation: scroll 15s linear infinite;
+  }
+
+  .marquee span {
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: var(--accent-2);
+    white-space: nowrap;
+  }
+
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+</style>
+</head>
+<body>
+<div class="overlay">
+  <div class="container">
+
+    <!-- Centered Fancy Thick Neon Heading with Border -->
+    <div class="heading">SEEKHUB</div>
+
+    <!-- Continuous Running Text / Marquee -->
+    <div class="marquee-container">
+      <div class="marquee">
+        <span>
+          WELCOME TO SEEKHUB SCRIPTS PLEASE FOLLOW ME ON TIKTOK &nbsp; • &nbsp; WELCOME TO SEEKHUB SCRIPTS PLEASE FOLLOW ME ON TIKTOK &nbsp; • &nbsp; 
+          WELCOME TO SEEKHUB SCRIPTS PLEASE FOLLOW ME ON TIKTOK &nbsp; • &nbsp; WELCOME TO SEEKHUB SCRIPTS PLEASE FOLLOW ME ON TIKTOK &nbsp; • &nbsp;
+        </span>
+      </div>
+    </div>
+
+    <!-- Section 1 -->
+    <section class="section">
+      <div class="card banner">
+        <img src="banner1.jpg" alt="Banner 1">
+      </div>
+      <div class="card script-box">
+        <div class="script-head">
+          <h3 class="script-title">Steal Anime | Linkvertise</h3>
+          <button class="copy-btn" data-target="script1">Copy</button>
+        </div>
+        <textarea id="script1" class="code" readonly>https://link-hub.net/1360048/qvTSqECiG9oi</textarea>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="section">
+      <div class="card banner">
+        <img src="banner2.jpg" alt="Banner 2">
+      </div>
+      <div class="card script-box">
+        <div class="script-head">
+          <h3 class="script-title">Build A Plane | Linkvertise</h3>
+          <button class="copy-btn" data-target="script2">Copy</button>
+        </div>
+        <textarea id="script2" class="code" readonly>https://link-hub.net/1360048/jVCFr0cAPXuU</textarea>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script>
+  // Modern clipboard with fallback
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const id = btn.getAttribute('data-target');
+      const el = document.getElementById(id);
+      try {
+        await navigator.clipboard.writeText(el.value);
+      } catch {
+        el.select();
+        document.execCommand('copy');
+      }
+      const prev = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => (btn.textContent = prev), 1200);
+    });
+  });
+</script>
+</body>
+</html>
